@@ -20,6 +20,7 @@ class Register:
         ]
 
     def add_student(self, id_, first_name, last_name, year):
+        self.db.append(Student(id_, first_name, last_name, year))
         return [id_, first_name, last_name, year]
 
 
