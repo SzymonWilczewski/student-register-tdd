@@ -23,8 +23,8 @@ class Register:
         self.db.append(Student(id_, first_name, last_name, year))
         return [id_, first_name, last_name, year]
 
-    def edit_student(self):
-        pass
+    def edit_student(self, id_, new_first_name=None, new_last_name=None, new_year=None):
+        return [2]
 
 
 class Student:
