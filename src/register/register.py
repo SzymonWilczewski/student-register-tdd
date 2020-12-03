@@ -38,6 +38,9 @@ class Register:
                     result.append(new_year)
                 return result
 
+    def remove_student(self):
+        pass
+
 
 class Student:
     def __init__(self, id_, first_name, last_name, year, subjects=None, comments=None):

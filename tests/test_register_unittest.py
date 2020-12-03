@@ -19,6 +19,11 @@ class TestRegisterUnittest(unittest.TestCase):
                                             new_last_name=None, new_year=2)
         self.assertEqual(expected, actual)
 
+    def test_remove_student(self):
+        expected = "dc338aff-d851-4c08-a319-ed4e18640b36"
+        actual = self.register.remove_student("dc338aff-d851-4c08-a319-ed4e18640b36")
+        self.assertEqual(expected, actual)
+
     def tearDown(self):
         self.register = None
 
