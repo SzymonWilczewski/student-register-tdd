@@ -24,7 +24,19 @@ class Register:
         return [id_, first_name, last_name, year]
 
     def edit_student(self, id_, new_first_name=None, new_last_name=None, new_year=None):
-        return [2]
+        result = []
+        for student in self.db:
+            if student.id_ == id_:
+                if new_first_name is not None:
+                    student.first_name = new_first_name
+                    result.append(new_first_name)
+                if new_last_name is not None:
+                    student.last_name = new_last_name
+                    result.append(new_last_name)
+                if new_year is not None:
+                    student.year = new_year
+                    result.append(new_year)
+                return result
 
 
 class Student:
