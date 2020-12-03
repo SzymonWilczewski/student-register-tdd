@@ -45,7 +45,8 @@ class Register:
                 return id_
 
     def student_id(self, first_name, last_name):
-        return ["dc338aff-d851-4c08-a319-ed4e18640b36"]
+        return [student.id_ for student in self.db
+                if student.first_name == first_name and student.last_name == last_name]
 
 
 class Student:
