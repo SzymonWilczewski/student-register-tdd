@@ -39,7 +39,10 @@ class Register:
                 return result
 
     def remove_student(self, id_):
-        return "dc338aff-d851-4c08-a319-ed4e18640b36"
+        for student in self.db:
+            if student.id_ == id_:
+                self.db.remove(student)
+                return id_
 
 
 class Student:
