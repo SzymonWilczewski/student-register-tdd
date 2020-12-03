@@ -38,8 +38,8 @@ class Register:
                     result.append(new_year)
                 return result
 
-    def remove_student(self):
-        pass
+    def remove_student(self, id_):
+        return "dc338aff-d851-4c08-a319-ed4e18640b36"
 
 
 class Student:
