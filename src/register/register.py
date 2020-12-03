@@ -19,8 +19,8 @@ class Register:
                      ["Angielski", [4.5, 4, 5.5, 3, 4.5, 6]]], [])
         ]
 
-    def add_student(self):
-        pass
+    def add_student(self, id_, first_name, last_name, year):
+        return [id_, first_name, last_name, year]
 
 
 class Student:
