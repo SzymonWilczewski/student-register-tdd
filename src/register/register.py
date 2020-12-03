@@ -19,6 +19,9 @@ class Register:
                      ["Angielski", [4.5, 4, 5.5, 3, 4.5, 6]]], [])
         ]
 
+    def add_student(self):
+        pass
+
 
 class Student:
     def __init__(self, id_, first_name, last_name, year, subjects=None, comments=None):
