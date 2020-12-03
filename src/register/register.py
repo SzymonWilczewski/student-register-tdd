@@ -44,6 +44,9 @@ class Register:
                 self.db.remove(student)
                 return id_
 
+    def student_id(self):
+        pass
+
 
 class Student:
     def __init__(self, id_, first_name, last_name, year, subjects=None, comments=None):
