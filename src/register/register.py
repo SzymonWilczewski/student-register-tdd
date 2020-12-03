@@ -23,6 +23,9 @@ class Register:
         self.db.append(Student(id_, first_name, last_name, year))
         return [id_, first_name, last_name, year]
 
+    def edit_student(self):
+        pass
+
 
 class Student:
     def __init__(self, id_, first_name, last_name, year, subjects=None, comments=None):
