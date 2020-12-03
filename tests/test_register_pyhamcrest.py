@@ -25,6 +25,11 @@ class TestRegisterPyHamcrest(unittest.TestCase):
         actual = self.register.remove_student("dc338aff-d851-4c08-a319-ed4e18640b36")
         assert_that(actual, equal_to(expected))
 
+    def test_student_id(self):
+        expected = ["dc338aff-d851-4c08-a319-ed4e18640b36"]
+        actual = self.register.student_id("Andrzej", "Kowalski")
+        assert_that(actual, equal_to(expected))
+
     def tearDown(self):
         self.register = None
 
