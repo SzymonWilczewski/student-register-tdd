@@ -1,0 +1,12 @@
+#This is a comment
+
+["Jan"] None None
+None ["Kamiński"] None
+None None "2"
+["Jan"] ["Kamiński"] None
+["Jan"] None "2"
+None ["Kamiński"] "2"
+["Jan"] ["Kamiński"] "2"
+True None None
+None True None
+None None True
