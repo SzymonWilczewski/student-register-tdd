@@ -63,7 +63,9 @@ class Register:
                 return new_subject_name
 
     def remove_subject(self, id_, index):
-        return "Język polski"
+        for student in self.db:
+            if student.id_ == id_:
+                return student.subjects.pop(index)[0]
 
 
 class Student:
