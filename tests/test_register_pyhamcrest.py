@@ -126,6 +126,12 @@ class TestRegisterPyHamcrest(unittest.TestCase):
         assert_that(calling(self.register.add_comment).with_args("dc338aff-d851-4c08-a319-ed4e18640b36", []),
                     raises(TypeError))
 
+    def test_edit_comment_exception(self):
+        assert_that(calling(self.register.edit_comment).with_args("dc338aff-d851-4c08-a319-ed4e18640b36", True,
+                                                                  "Uczeń przeszkadza w prowadzeniu zajęć"),
+                    raises(TypeError))
+
+
     def tearDown(self):
         self.register = None
 
