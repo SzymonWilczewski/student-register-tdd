@@ -91,8 +91,8 @@ class Register:
                 grades = [grade for subject in student.subjects for grade in subject[1]]
                 return round(sum(grades) / len(grades), 2)
 
-    def add_comment(self):
-        pass
+    def add_comment(self, id_, comment):
+        return comment
 
 
 class Student:
