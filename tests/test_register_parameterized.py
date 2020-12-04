@@ -23,6 +23,22 @@ class TestRegisterParameterizedExpand(unittest.TestCase):
                                             new_year)
         self.assertEqual(expected, actual)
 
+    @parameterized.expand([
+        (["Jan"], None, None),
+        (None, ["Kamiński"], None),
+        (None, None, "2"),
+        (["Jan"], ["Kamiński"], None),
+        (["Jan"], None, "2"),
+        (None, ["Kamiński"], "2"),
+        (["Jan"], ["Kamiński"], "2"),
+        (True, None, None),
+        (None, True, None),
+        (None, None, True),
+    ])
+    def test_edit_student_expand_exceptions(self, new_first_name, new_last_name, new_year):
+        with self.assertRaises(TypeError):
+            self.register.edit_student("dc338aff-d851-4c08-a319-ed4e18640b36", new_first_name, new_last_name, new_year)
+
     def tearDown(self):
         self.register = None
 
