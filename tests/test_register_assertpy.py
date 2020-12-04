@@ -60,6 +60,11 @@ class TestRegisterAssertpy(unittest.TestCase):
         actual = self.register.average_from_subject("dc338aff-d851-4c08-a319-ed4e18640b36", 0)
         assert_that(actual).is_equal_to(expected)
 
+    def test_average_from_all_subjects(self):
+        expected = 4.44
+        actual = self.register.average_from_all_subjects("dc338aff-d851-4c08-a319-ed4e18640b36")
+        assert_that(actual).is_equal_to(expected)
+
     def tearDown(self):
         self.register = None
 
