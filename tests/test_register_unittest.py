@@ -39,6 +39,11 @@ class TestRegisterUnittest(unittest.TestCase):
         actual = self.register.edit_subject("dc338aff-d851-4c08-a319-ed4e18640b36", 0, "Informatyka")
         self.assertEqual(expected, actual)
 
+    def test_remove_subject(self):
+        expected = "Język polski"
+        actual = self.register.remove_subject("dc338aff-d851-4c08-a319-ed4e18640b36", 0)
+        self.assertEqual(expected, actual)
+
     def tearDown(self):
         self.register = None
 

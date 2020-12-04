@@ -62,6 +62,9 @@ class Register:
                 student.subjects = subjects
                 return new_subject_name
 
+    def remove_subject(self):
+        pass
+
 
 class Student:
     def __init__(self, id_, first_name, last_name, year, subjects=None, comments=None):
