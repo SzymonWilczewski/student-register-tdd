@@ -77,6 +77,13 @@ class TestRegisterPyHamcrest(unittest.TestCase):
                                             "Uczeń przeszkadza w prowadzeniu zajęć")
         assert_that(actual, equal_to(expected))
 
+    # EXCEPTIONS
+
+    def test_add_student_exception(self):
+        assert_that(
+            calling(self.register.add_student).with_args("f53b878e-7105-4f44-9f88-f1cc5d8b63f5", "Anna", "Nowak", "1"),
+            raises(TypeError))
+
     def tearDown(self):
         self.register = None
 
