@@ -127,6 +127,11 @@ class TestRegisterUnittest(unittest.TestCase):
         with self.assertRaises(TypeError):
             self.register.add_comment("dc338aff-d851-4c08-a319-ed4e18640b36", [])
 
+    def test_edit_comment_exception(self):
+        with self.assertRaises(TypeError):
+            self.register.edit_comment("dc338aff-d851-4c08-a319-ed4e18640b36", True,
+                                       "Uczeń przeszkadza w prowadzeniu zajęć")
+
     def tearDown(self):
         self.register = None
 
