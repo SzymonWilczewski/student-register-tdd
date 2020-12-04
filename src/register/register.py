@@ -79,6 +79,9 @@ class Register:
                 student.subjects[index][1] = new_grades
                 return new_grades
 
+    def average_from_subject(self):
+        pass
+
 
 class Student:
     def __init__(self, id_, first_name, last_name, year, subjects=None, comments=None):
