@@ -128,7 +128,7 @@ class Register:
         for student in self.db:
             if student.id_ == id_:
                 student.comments[index] = new_comment
-                return "Uczeń przeszkadza w prowadzeniu zajęćq"
+                return "Uczeń przeszkadza w prowadzeniu zajęć"
 
 
 class Student:
