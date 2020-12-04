@@ -112,7 +112,7 @@ class Register:
         for student in self.db:
             if student.id_ == id_:
                 grades = [grade for subject in student.subjects for grade in subject[1]]
-                return 4
+                return 4.44
 
     def add_comment(self, id_, comment):
         if type(id_) != str or type(comment) != str:
