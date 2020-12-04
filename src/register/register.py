@@ -32,21 +32,23 @@ class Register:
 
     def edit_student(self, id_, new_first_name=None, new_last_name=None, new_year=None):
         if type(id_) != str or (new_first_name is not None and type(new_first_name) != str) or (
-                new_last_name is not None and type(new_last_name) != str) or type(new_year) != int:
+                new_last_name is not None and type(new_last_name) != str) or (
+                new_year is not None and type(new_year) != int):
             raise TypeError
-        result = []
-        for student in self.db:
-            if student.id_ == id_:
-                if new_first_name is not None:
-                    student.first_name = new_first_name
-                    result.append(new_first_name)
-                if new_last_name is not None:
-                    student.last_name = new_last_name
-                    result.append(new_last_name)
-                if new_year is not None:
-                    student.year = new_year
-                    result.append(new_year)
-                return
+        else:
+            result = []
+            for student in self.db:
+                if student.id_ == id_:
+                    if new_first_name is not None:
+                        student.first_name = new_first_name
+                        result.append(new_first_name)
+                    if new_last_name is not None:
+                        student.last_name = new_last_name
+                        result.append(new_last_name)
+                    if new_year is not None:
+                        student.year = new_year
+                        result.append(new_year)
+                    return result
 
     def remove_student(self, id_):
         if type(id_) != str:
