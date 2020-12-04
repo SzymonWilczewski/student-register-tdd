@@ -46,11 +46,10 @@ class Register:
     def remove_student(self, id_):
         if type(id_) != str:
             raise TypeError
-        else:
-            for student in self.db:
-                if student.id_ == id_:
-                    self.db.remove(student)
-                    return id_
+        for student in self.db:
+            if student.id_ == id_:
+                self.db.remove(student)
+                return id_
 
     def student_id(self, first_name, last_name):
         return [student.id_ for student in self.db
