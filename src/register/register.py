@@ -144,7 +144,7 @@ class Register:
             self.db = csv
 
     def export_csv(self):
-        with io.open(os.path.join(os.path.dirname(__file__), "..\\data\\register.csv"), "w",
+        with io.open(os.path.join(os.path.dirname(__file__), "..\\..\\data\\register.csv"), "w",
                      encoding='utf8') as csv:
             export_data = ""
             for student in self.db:
