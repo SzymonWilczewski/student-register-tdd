@@ -115,7 +115,7 @@ class Register:
                 return round(sum(grades) / len(grades), 2)
 
     def add_comment(self, id_, comment):
-        if type(comment) != str:
+        if type(id_) != str or type(comment) != str:
             raise TypeError
         for student in self.db:
             if student.id_ == id_:
