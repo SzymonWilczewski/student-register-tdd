@@ -91,7 +91,7 @@ class Register:
                 return grade
 
     def edit_grades(self, id_, index, new_grades):
-        if type(new_grades) != list:
+        if type(id_) != str or type(index) != int or type(new_grades) != list:
             raise TypeError
         for student in self.db:
             if student.id_ == id_:
