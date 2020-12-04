@@ -97,6 +97,10 @@ class TestRegisterAssertpy(unittest.TestCase):
         assert_that(self.register.add_subject).raises(TypeError).when_called_with(
             "dc338aff-d851-4c08-a319-ed4e18640b36", True)
 
+    def test_edit_subject_exception(self):
+        assert_that(self.register.edit_subject).raises(TypeError).when_called_with(
+            "dc338aff-d851-4c08-a319-ed4e18640b36", 0, [])
+
     def tearDown(self):
         self.register = None
 
