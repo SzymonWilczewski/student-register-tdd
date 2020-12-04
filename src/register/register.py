@@ -66,7 +66,7 @@ class Register:
                 return subject_name
 
     def edit_subject(self, id_, index, new_subject_name):
-        if type(new_subject_name) != str:
+        if type(id_) != str or type(index) != int or type(new_subject_name) != str:
             raise TypeError
         for student in self.db:
             if student.id_ == id_:
