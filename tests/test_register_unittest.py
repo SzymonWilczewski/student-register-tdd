@@ -95,6 +95,10 @@ class TestRegisterUnittest(unittest.TestCase):
         with self.assertRaises(TypeError):
             self.register.student_id("Andrzej", [])
 
+    def test_add_subject_exception(self):
+        with self.assertRaises(TypeError):
+            self.register.add_subject("dc338aff-d851-4c08-a319-ed4e18640b36", True)
+
     def tearDown(self):
         self.register = None
 
