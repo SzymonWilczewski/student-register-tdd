@@ -67,6 +67,9 @@ class Register:
             if student.id_ == id_:
                 return student.subjects.pop(index)[0]
 
+    def add_grade(self):
+        pass
+
 
 class Student:
     def __init__(self, id_, first_name, last_name, year, subjects=None, comments=None):
