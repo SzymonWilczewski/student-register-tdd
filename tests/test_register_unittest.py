@@ -76,6 +76,12 @@ class TestRegisterUnittest(unittest.TestCase):
                                             "Uczeń przeszkadza w prowadzeniu zajęć")
         self.assertEqual(expected, actual)
 
+    # EXCEPTIONS
+
+    def test_add_student_exception(self):
+        with self.assertRaises(TypeError):
+            self.register.add_student("f53b878e-7105-4f44-9f88-f1cc5d8b63f5", "Anna", "Nowak", "1")
+
     def tearDown(self):
         self.register = None
 
