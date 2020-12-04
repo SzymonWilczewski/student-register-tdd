@@ -97,6 +97,9 @@ class Register:
                 student.comments.append(comment)
                 return comment
 
+    def edit_comment(self):
+        pass
+
 
 class Student:
     def __init__(self, id_, first_name, last_name, year, subjects=None, comments=None):
