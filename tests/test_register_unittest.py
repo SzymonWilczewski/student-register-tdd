@@ -87,6 +87,10 @@ class TestRegisterUnittest(unittest.TestCase):
             self.register.edit_student("dc338aff-d851-4c08-a319-ed4e18640b36", new_first_name=None,
                                        new_last_name=None, new_year="2")
 
+    def test_remove_student_exception(self):
+        with self.assertRaises(TypeError):
+            self.register.remove_student(123)
+
     def tearDown(self):
         self.register = None
 
