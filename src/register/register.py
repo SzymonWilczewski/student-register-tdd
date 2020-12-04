@@ -152,6 +152,7 @@ class Register:
                            json.dumps(student.subjects, ensure_ascii=False),
                            json.dumps(student.comments, ensure_ascii=False)]
                 export_data += ";".join(student) + "\n"
+            csv.write(export_data)
 
 
 class Student:
