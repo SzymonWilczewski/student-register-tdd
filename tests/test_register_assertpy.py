@@ -65,6 +65,12 @@ class TestRegisterAssertpy(unittest.TestCase):
         actual = self.register.average_from_all_subjects("dc338aff-d851-4c08-a319-ed4e18640b36")
         assert_that(actual).is_equal_to(expected)
 
+    def test_add_comment(self):
+        expected = "Uczeń przeszkadza w prowadzeniu zajęć"
+        actual = self.register.add_comment("dc338aff-d851-4c08-a319-ed4e18640b36",
+                                           "Uczeń przeszkadza w prowadzeniu zajęć")
+        assert_that(actual).is_equal_to(expected)
+
     def tearDown(self):
         self.register = None
 
