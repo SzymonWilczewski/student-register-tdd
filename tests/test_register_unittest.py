@@ -111,6 +111,10 @@ class TestRegisterUnittest(unittest.TestCase):
         with self.assertRaises(TypeError):
             self.register.add_grade("dc338aff-d851-4c08-a319-ed4e18640b36", 0, "2.5")
 
+    def test_edit_grades_exception(self):
+        with self.assertRaises(TypeError):
+            self.register.edit_grades("dc338aff-d851-4c08-a319-ed4e18640b36", 0, 5)
+
     def tearDown(self):
         self.register = None
 
