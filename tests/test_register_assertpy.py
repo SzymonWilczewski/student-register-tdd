@@ -98,6 +98,11 @@ class TestRegisterAssertpy(unittest.TestCase):
                                             "Uczeń przeszkadza w prowadzeniu zajęć")
         assert_that(actual).is_equal_to(expected)
 
+    def test_edit_comment_doesnt_contain_q(self):
+        actual = self.register.edit_comment("dc338aff-d851-4c08-a319-ed4e18640b36", 0,
+                                            "Uczeń przeszkadza w prowadzeniu zajęć")
+        assert_that(actual).does_not_contain("q")
+
     # EXCEPTIONS
 
     def test_add_student_exception(self):
