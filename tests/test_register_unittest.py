@@ -29,6 +29,11 @@ class TestRegisterUnittest(unittest.TestCase):
         actual = self.register.student_id("Andrzej", "Kowalski")
         self.assertEqual(expected, actual)
 
+    def test_add_subject(self):
+        expected = "Informatyka"
+        actual = self.register.add_subject("dc338aff-d851-4c08-a319-ed4e18640b36", "Informatyka")
+        self.assertEqual(expected, actual)
+
     def tearDown(self):
         self.register = None
 

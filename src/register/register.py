@@ -48,6 +48,9 @@ class Register:
         return [student.id_ for student in self.db
                 if student.first_name == first_name and student.last_name == last_name]
 
+    def add_subject(self):
+        pass
+
 
 class Student:
     def __init__(self, id_, first_name, last_name, year, subjects=None, comments=None):
