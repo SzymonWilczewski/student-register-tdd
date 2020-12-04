@@ -112,6 +112,10 @@ class TestRegisterPyHamcrest(unittest.TestCase):
         assert_that(calling(self.register.add_grade).with_args("dc338aff-d851-4c08-a319-ed4e18640b36", 0, "2.5"),
                     raises(TypeError))
 
+    def test_edit_grades_exception(self):
+        assert_that(calling(self.register.edit_grades).with_args("dc338aff-d851-4c08-a319-ed4e18640b36", 0, 5),
+                    raises(TypeError))
+
     def tearDown(self):
         self.register = None
 
