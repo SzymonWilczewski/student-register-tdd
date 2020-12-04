@@ -62,8 +62,8 @@ class Register:
                 student.subjects = subjects
                 return new_subject_name
 
-    def remove_subject(self):
-        pass
+    def remove_subject(self, id_, index):
+        return "Język polski"
 
 
 class Student:
