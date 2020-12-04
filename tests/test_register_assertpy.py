@@ -103,6 +103,16 @@ class TestRegisterAssertpy(unittest.TestCase):
                                             "Uczeń przeszkadza w prowadzeniu zajęć")
         assert_that(actual).does_not_contain("q")
 
+    def test_import_csv(self):
+        file_exists = False
+        try:
+            self.register.import_csv()
+            file_exists = True
+        except FileNotFoundError:
+            file_exists = False
+        finally:
+            assert_that(file_exists).is_true()
+
     # EXCEPTIONS
 
     def test_add_student_exception(self):
