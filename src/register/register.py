@@ -96,7 +96,7 @@ class Register:
         for student in self.db:
             if student.id_ == id_:
                 student.subjects[index][1] = new_grades
-                return [5, 2.5, 3, 1.5, 1]
+                return new_grades
 
     def average_from_subject(self, id_, index):
         if type(id_) != str or type(index) != int:
