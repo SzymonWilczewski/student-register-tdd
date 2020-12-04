@@ -1,3 +1,8 @@
+import io
+import os
+import json
+
+
 class Register:
     def __init__(self):
         self.db = [
@@ -129,6 +134,13 @@ class Register:
             if student.id_ == id_:
                 student.comments[index] = new_comment
                 return new_comment
+
+    def import_csv(self):
+        with io.open(os.path.join(os.path.dirname(__file__), "..\\..\\data\\register.txt"), encoding='utf8') as csv:
+            csv = csv.readlines()
+            csv = [student.split(';') for student in csv]
+            csv = [Student(student[0], student[1], student[2], int(student[3]), json.loads(student[4]),
+                           json.loads(student[5])) for student in csv]
 
 
 class Student:

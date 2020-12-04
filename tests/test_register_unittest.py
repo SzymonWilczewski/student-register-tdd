@@ -158,6 +158,16 @@ class TestRegisterUnittest(unittest.TestCase):
             self.register.edit_comment("dc338aff-d851-4c08-a319-ed4e18640b36", True,
                                        "Uczeń przeszkadza w prowadzeniu zajęć")
 
+    def test_import_csv(self):
+        file_exists = False
+        try:
+            self.register.import_csv()
+            file_exists = True
+        except FileNotFoundError:
+            file_exists = False
+        finally:
+            self.assertTrue(file_exists)
+
     def tearDown(self):
         self.register = None
 
