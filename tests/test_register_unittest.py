@@ -49,6 +49,10 @@ class TestRegisterUnittest(unittest.TestCase):
         actual = self.register.add_grade("dc338aff-d851-4c08-a319-ed4e18640b36", 0, 2.5)
         self.assertEqual(expected, actual)
 
+    def test_add_grade_is_greater_than_2(self):
+        actual = self.register.add_grade("dc338aff-d851-4c08-a319-ed4e18640b36", 0, 2.5)
+        self.assertGreater(actual, 2)
+
     def test_edit_grades(self):
         expected = [5, 2.5, 3, 1.5, 1]
         actual = self.register.edit_grades("dc338aff-d851-4c08-a319-ed4e18640b36", 0, [5, 2.5, 3, 1.5, 1])
