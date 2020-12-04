@@ -76,7 +76,7 @@ class Register:
                 return new_subject_name
 
     def remove_subject(self, id_, index):
-        if type(index) != int:
+        if type(id_) != str or type(index) != int:
             raise TypeError
         for student in self.db:
             if student.id_ == id_:
