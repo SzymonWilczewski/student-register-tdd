@@ -52,6 +52,8 @@ class Register:
                 return id_
 
     def student_id(self, first_name, last_name):
+        if type(last_name) != str:
+            raise TypeError
         return [student.id_ for student in self.db
                 if student.first_name == first_name and student.last_name == last_name]
 
