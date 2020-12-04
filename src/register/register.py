@@ -73,6 +73,9 @@ class Register:
                 student.subjects[index][1].append(grade)
                 return grade
 
+    def edit_grades(self):
+        pass
+
 
 class Student:
     def __init__(self, id_, first_name, last_name, year, subjects=None, comments=None):
