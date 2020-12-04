@@ -77,6 +77,10 @@ class TestRegisterPyHamcrest(unittest.TestCase):
         actual = self.register.average_from_all_subjects("dc338aff-d851-4c08-a319-ed4e18640b36")
         assert_that(actual, equal_to(expected))
 
+    def test_average_from_all_subjects_is_close_to_4_4(self):
+        actual = self.register.average_from_all_subjects("dc338aff-d851-4c08-a319-ed4e18640b36")
+        assert_that(actual, close_to(4.4, 0.05))
+
     def test_add_comment(self):
         expected = "Uczeń przeszkadza w prowadzeniu zajęć"
         actual = self.register.add_comment("dc338aff-d851-4c08-a319-ed4e18640b36",
