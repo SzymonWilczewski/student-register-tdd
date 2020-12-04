@@ -116,6 +116,9 @@ class TestRegisterAssertpy(unittest.TestCase):
     def test_average_from_subject_exception(self):
         assert_that(self.register.average_from_subject).raises(TypeError).when_called_with(123, 0)
 
+    def test_average_from_all_subjects_exception(self):
+        assert_that(self.register.average_from_all_subjects).raises(TypeError).when_called_with([])
+
     def tearDown(self):
         self.register = None
 
