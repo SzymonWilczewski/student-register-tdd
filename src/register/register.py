@@ -99,6 +99,8 @@ class Register:
                 return new_grades
 
     def average_from_subject(self, id_, index):
+        if type(id_) != str:
+            raise TypeError
         for student in self.db:
             if student.id_ == id_:
                 grades = student.subjects[index][1]
