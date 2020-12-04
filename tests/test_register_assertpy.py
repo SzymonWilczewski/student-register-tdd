@@ -77,6 +77,12 @@ class TestRegisterAssertpy(unittest.TestCase):
                                             "Uczeń przeszkadza w prowadzeniu zajęć")
         assert_that(actual).is_equal_to(expected)
 
+    # EXCEPTIONS
+
+    def test_add_student_exception(self):
+        assert_that(self.register.add_student).raises(TypeError).when_called_with(
+            "f53b878e-7105-4f44-9f88-f1cc5d8b63f5", "Anna", "Nowak", "1")
+
     def tearDown(self):
         self.register = None
 
