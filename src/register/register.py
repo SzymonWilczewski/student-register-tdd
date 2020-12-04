@@ -80,7 +80,10 @@ class Register:
                 return new_grades
 
     def average_from_subject(self, id_, index):
-        return 2.6
+        for student in self.db:
+            if student.id_ == id_:
+                grades = student.subjects[index][1]
+                return round(sum(grades) / len(grades), 2)
 
 
 class Student:
