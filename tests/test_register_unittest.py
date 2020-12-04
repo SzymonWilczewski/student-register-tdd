@@ -91,6 +91,10 @@ class TestRegisterUnittest(unittest.TestCase):
         with self.assertRaises(TypeError):
             self.register.remove_student(123)
 
+    def test_student_id_exception(self):
+        with self.assertRaises(TypeError):
+            self.register.student_id("Andrzej", [])
+
     def tearDown(self):
         self.register = None
 
