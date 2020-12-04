@@ -92,6 +92,9 @@ class TestRegisterPyHamcrest(unittest.TestCase):
     def test_remove_student_exception(self):
         assert_that(calling(self.register.remove_student).with_args(123), raises(TypeError))
 
+    def test_student_id_exception(self):
+        assert_that(calling(self.register.student_id).with_args("Andrzej", []), raises(TypeError))
+
     def tearDown(self):
         self.register = None
 
