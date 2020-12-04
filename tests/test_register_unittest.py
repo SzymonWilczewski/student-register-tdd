@@ -86,6 +86,11 @@ class TestRegisterUnittest(unittest.TestCase):
                                            "Uczeń przeszkadza w prowadzeniu zajęć")
         self.assertEqual(expected, actual)
 
+    def test_add_comment_contains_U(self):
+        actual = self.register.add_comment("dc338aff-d851-4c08-a319-ed4e18640b36",
+                                           "Uczeń przeszkadza w prowadzeniu zajęć")
+        self.assertRegex(actual, "U")
+
     def test_edit_comment(self):
         expected = "Uczeń przeszkadza w prowadzeniu zajęć"
         actual = self.register.edit_comment("dc338aff-d851-4c08-a319-ed4e18640b36", 0,
