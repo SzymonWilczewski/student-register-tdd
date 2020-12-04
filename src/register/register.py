@@ -107,10 +107,13 @@ class Register:
                 return round(sum(grades) / len(grades), 2)
 
     def average_from_all_subjects(self, id_):
-        for student in self.db:
-            if student.id_ == id_:
-                grades = [grade for subject in student.subjects for grade in subject[1]]
-                return round(sum(grades) / len(grades), 2)
+        if type(id_) != str:
+            raise TypeError
+        else:
+            for student in self.db:
+                if student.id_ == id_:
+                    grades = [grade for subject in student.subjects for grade in subject[1]]
+                    return round(sum(grades) / len(grades), 2)
 
     def add_comment(self, id_, comment):
         for student in self.db:
