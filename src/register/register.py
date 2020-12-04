@@ -136,7 +136,7 @@ class Register:
                 return new_comment
 
     def import_csv(self):
-        with io.open(os.path.join(os.path.dirname(__file__), "..\\..\\data\\register.txt"), encoding='utf8') as csv:
+        with io.open(os.path.join(os.path.dirname(__file__), "..\\..\\data\\register.csv"), encoding='utf8') as csv:
             csv = csv.readlines()
             csv = [student.split(';') for student in csv]
             csv = [Student(student[0], student[1], student[2], int(student[3]), json.loads(student[4]),
