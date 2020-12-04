@@ -86,7 +86,10 @@ class Register:
                 return round(sum(grades) / len(grades), 2)
 
     def average_from_all_subjects(self, id_):
-        return 4.44
+        for student in self.db:
+            if student.id_ == id_:
+                grades = [grade for subject in student.subjects for grade in subject[1]]
+                return round(sum(grades) / len(grades), 2)
 
 
 class Student:
