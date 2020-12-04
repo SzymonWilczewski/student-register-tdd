@@ -58,6 +58,10 @@ class TestRegisterUnittest(unittest.TestCase):
         actual = self.register.edit_grades("dc338aff-d851-4c08-a319-ed4e18640b36", 0, [5, 2.5, 3, 1.5, 1])
         self.assertEqual(expected, actual)
 
+    def test_edit_grades_3_in_grades(self):
+        actual = self.register.edit_grades("dc338aff-d851-4c08-a319-ed4e18640b36", 0, [5, 2.5, 3, 1.5, 1])
+        self.assertIn(3, actual)
+
     def test_average_from_subject(self):
         expected = 2.6
         actual = self.register.average_from_subject("dc338aff-d851-4c08-a319-ed4e18640b36", 0)
