@@ -113,6 +113,21 @@ class TestRegisterParameterizedFromFile(unittest.TestCase):
                                                         new_last_name, new_year)
                     self.assertEqual(expected, actual)
 
+    def test_edit_student_from_file_exceptions(self):
+        with io.open(os.path.join(os.path.dirname(__file__), "..\\data\\register_exception_test"),
+                     encoding='utf8') as file:
+            for line in file:
+                if line.startswith("#") or line.startswith(" ") or line.startswith("\n"):
+                    continue
+                else:
+                    data = line.split(" ")
+                    new_first_name = ast.literal_eval(data[0])
+                    new_last_name = ast.literal_eval(data[1])
+                    new_year = ast.literal_eval(data[2].strip("\n"))
+                    with self.assertRaises(TypeError):
+                        self.register.edit_student("dc338aff-d851-4c08-a319-ed4e18640b36", new_first_name,
+                                                   new_last_name, new_year)
+
     def tearDown(self):
         self.register = None
 
