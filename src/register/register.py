@@ -49,7 +49,10 @@ class Register:
                 if student.first_name == first_name and student.last_name == last_name]
 
     def add_subject(self, id_, subject_name):
-        return subject_name
+        for student in self.db:
+            if student.id_ == id_:
+                student.subjects.append([subject_name, []])
+                return subject_name
 
 
 class Student:
