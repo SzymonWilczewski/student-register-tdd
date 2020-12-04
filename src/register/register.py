@@ -83,7 +83,7 @@ class Register:
                 return student.subjects.pop(index)[0]
 
     def add_grade(self, id_, index, grade):
-        if type(grade) != int and type(grade) != float:
+        if type(id_) != str or type(index) != int or (type(grade) != int and type(grade) != float):
             raise TypeError
         for student in self.db:
             if student.id_ == id_:
