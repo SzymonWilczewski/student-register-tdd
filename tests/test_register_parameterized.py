@@ -66,5 +66,31 @@ class TestRegisterParameterizedClass(unittest.TestCase):
         self.register = None
 
 
+@parameterized_class(("new_first_name", "new_last_name", "new_year"), [
+    (["Jan"], None, None),
+    (None, ["Wójcik"], None),
+    (None, None, "2"),
+    (["Jan"], ["Wójcik"], None),
+    (["Jan"], None, "2"),
+    (None, ["Wójcik"], "2"),
+    (["Jan"], ["Wójcik"], "2"),
+    (True, None, None),
+    (None, True, None),
+    (None, None, True),
+])
+class TestRegisterParameterizedClassExceptions(unittest.TestCase):
+
+    def setUp(self):
+        self.register = Register()
+
+    def test_edit_student_class_exceptions(self):
+        with self.assertRaises(TypeError):
+            self.register.edit_student("dc338aff-d851-4c08-a319-ed4e18640b36", self.new_first_name, self.new_last_name,
+                                       self.new_year)
+
+    def tearDown(self):
+        self.register = None
+
+
 if __name__ == '__main__':
     unittest.main()

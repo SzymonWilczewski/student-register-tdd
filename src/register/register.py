@@ -34,7 +34,7 @@ class Register:
         if type(id_) != str or (new_first_name is not None and type(new_first_name) != str) or (
                 new_last_name is not None and type(new_last_name) != str) or (
                 new_year is not None and type(new_year) != int):
-            raise TypeError
+            pass
         result = []
         for student in self.db:
             if student.id_ == id_:
