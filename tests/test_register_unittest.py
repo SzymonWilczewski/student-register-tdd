@@ -112,6 +112,16 @@ class TestRegisterUnittest(unittest.TestCase):
         finally:
             self.assertTrue(file_exists)
 
+    def test_export_csv(self):
+        file_exists = False
+        try:
+            self.register.export_csv()
+            file_exists = True
+        except FileNotFoundError:
+            file_exists = False
+        finally:
+            self.assertTrue(file_exists)
+
     # EXCEPTIONS
 
     def test_add_student_exception(self):

@@ -143,6 +143,16 @@ class Register:
                            json.loads(student[5])) for student in csv]
             self.db = csv
 
+    def export_csv(self):
+        with io.open(os.path.join(os.path.dirname(__file__), "..\\data\\register.csv"), "w",
+                     encoding='utf8') as csv:
+            export_data = ""
+            for student in self.db:
+                student = [str(student.id_), student.first_name, student.last_name, str(student.year),
+                           json.dumps(student.subjects, ensure_ascii=False),
+                           json.dumps(student.comments, ensure_ascii=False)]
+                export_data += ";".join(student) + "\n"
+
 
 class Student:
     def __init__(self, id_, first_name, last_name, year, subjects=None, comments=None):
