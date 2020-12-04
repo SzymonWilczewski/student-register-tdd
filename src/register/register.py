@@ -141,6 +141,7 @@ class Register:
             csv = [student.split(';') for student in csv]
             csv = [Student(student[0], student[1], student[2], int(student[3]), json.loads(student[4]),
                            json.loads(student[5])) for student in csv]
+            self.db = csv
 
 
 class Student:
