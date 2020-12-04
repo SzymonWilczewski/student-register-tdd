@@ -97,8 +97,8 @@ class Register:
                 student.comments.append(comment)
                 return comment
 
-    def edit_comment(self):
-        pass
+    def edit_comment(self, id_, index, new_comment):
+        return new_comment
 
 
 class Student:
