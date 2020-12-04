@@ -55,7 +55,12 @@ class Register:
                 return subject_name
 
     def edit_subject(self, id_, index, new_subject_name):
-        return new_subject_name
+        for student in self.db:
+            if student.id_ == id_:
+                subjects = student.subjects
+                subjects[index] = [new_subject_name, []]
+                student.subjects = subjects
+                return new_subject_name
 
 
 class Student:
