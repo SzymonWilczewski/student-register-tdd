@@ -103,6 +103,10 @@ class TestRegisterUnittest(unittest.TestCase):
         with self.assertRaises(TypeError):
             self.register.edit_subject("dc338aff-d851-4c08-a319-ed4e18640b36", 0, [])
 
+    def test_remove_subject_exception(self):
+        with self.assertRaises(TypeError):
+            self.register.remove_subject("dc338aff-d851-4c08-a319-ed4e18640b36", False)
+
     def tearDown(self):
         self.register = None
 
