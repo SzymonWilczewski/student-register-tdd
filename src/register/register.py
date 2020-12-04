@@ -26,7 +26,8 @@ class Register:
         return [id_, first_name, last_name, year]
 
     def edit_student(self, id_, new_first_name=None, new_last_name=None, new_year=None):
-        if type(new_year) != int:
+        if type(id_) != str or (new_first_name is not None and type(new_first_name) != str) or (
+                new_last_name is not None and type(new_last_name) != str) or type(new_year) != int:
             raise TypeError
         result = []
         for student in self.db:
