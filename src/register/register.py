@@ -120,7 +120,7 @@ class Register:
         for student in self.db:
             if student.id_ == id_:
                 student.comments.append(comment)
-                return "Uczeń przeszkadza w prowadzeniu zajęć"
+                return comment
 
     def edit_comment(self, id_, index, new_comment):
         if type(id_) != str or type(index) != int or type(new_comment) != str:
