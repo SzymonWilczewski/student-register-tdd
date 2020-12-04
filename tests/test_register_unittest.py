@@ -119,6 +119,10 @@ class TestRegisterUnittest(unittest.TestCase):
         with self.assertRaises(TypeError):
             self.register.average_from_subject(123, 0)
 
+    def test_average_from_all_subjects_exception(self):
+        with self.assertRaises(TypeError):
+            self.register.average_from_all_subjects([])
+
     def tearDown(self):
         self.register = None
 
