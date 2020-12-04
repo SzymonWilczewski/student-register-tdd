@@ -102,6 +102,16 @@ class TestRegisterUnittest(unittest.TestCase):
                                             "Uczeń przeszkadza w prowadzeniu zajęć")
         self.assertNotRegex(actual, "q")
 
+    def test_import_csv(self):
+        file_exists = False
+        try:
+            self.register.import_csv()
+            file_exists = True
+        except FileNotFoundError:
+            file_exists = False
+        finally:
+            self.assertTrue(file_exists)
+
     # EXCEPTIONS
 
     def test_add_student_exception(self):
@@ -157,16 +167,6 @@ class TestRegisterUnittest(unittest.TestCase):
         with self.assertRaises(TypeError):
             self.register.edit_comment("dc338aff-d851-4c08-a319-ed4e18640b36", True,
                                        "Uczeń przeszkadza w prowadzeniu zajęć")
-
-    def test_import_csv(self):
-        file_exists = False
-        try:
-            self.register.import_csv()
-            file_exists = True
-        except FileNotFoundError:
-            file_exists = False
-        finally:
-            self.assertTrue(file_exists)
 
     def tearDown(self):
         self.register = None
