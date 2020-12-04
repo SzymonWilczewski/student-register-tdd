@@ -74,7 +74,10 @@ class Register:
                 return grade
 
     def edit_grades(self, id_, index, new_grades):
-        return new_grades
+        for student in self.db:
+            if student.id_ == id_:
+                student.subjects[index][1] = new_grades
+                return new_grades
 
 
 class Student:
