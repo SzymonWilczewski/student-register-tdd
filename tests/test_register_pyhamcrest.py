@@ -119,6 +119,9 @@ class TestRegisterPyHamcrest(unittest.TestCase):
     def test_average_from_subject_exception(self):
         assert_that(calling(self.register.average_from_subject).with_args(123, 0), raises(TypeError))
 
+    def test_average_from_all_subjects_exception(self):
+        assert_that(calling(self.register.average_from_all_subjects).with_args([]), raises(TypeError))
+
     def tearDown(self):
         self.register = None
 
