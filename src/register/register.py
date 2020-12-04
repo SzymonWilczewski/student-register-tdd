@@ -85,6 +85,9 @@ class Register:
                 grades = student.subjects[index][1]
                 return round(sum(grades) / len(grades), 2)
 
+    def average_from_all_subjects(self):
+        pass
+
 
 class Student:
     def __init__(self, id_, first_name, last_name, year, subjects=None, comments=None):
