@@ -20,7 +20,7 @@ class Register:
         ]
 
     def add_student(self, id_, first_name, last_name, year):
-        if type(year) != int:
+        if type(id_) != str or type(first_name) != str or type(last_name) != str or type(year) != int:
             raise TypeError
         self.db.append(Student(id_, first_name, last_name, year))
         return [id_, first_name, last_name, year]
