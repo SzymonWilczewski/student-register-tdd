@@ -93,6 +93,10 @@ class TestRegisterAssertpy(unittest.TestCase):
     def test_student_id_exception(self):
         assert_that(self.register.student_id).raises(TypeError).when_called_with("Andrzej", [])
 
+    def test_add_subject_exception(self):
+        assert_that(self.register.add_subject).raises(TypeError).when_called_with(
+            "dc338aff-d851-4c08-a319-ed4e18640b36", True)
+
     def tearDown(self):
         self.register = None
 
