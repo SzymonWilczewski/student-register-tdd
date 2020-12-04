@@ -47,7 +47,7 @@ class Register:
                 if new_year is not None:
                     student.year = new_year
                     result.append(new_year)
-                return result
+                return
 
     def remove_student(self, id_):
         if type(id_) != str:
