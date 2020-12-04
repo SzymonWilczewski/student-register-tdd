@@ -68,7 +68,10 @@ class Register:
                 return student.subjects.pop(index)[0]
 
     def add_grade(self, id_, index, grade):
-        return grade
+        for student in self.db:
+            if student.id_ == id_:
+                student.subjects[index][1].append(grade)
+                return grade
 
 
 class Student:
