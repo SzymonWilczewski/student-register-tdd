@@ -113,6 +113,16 @@ class TestRegisterAssertpy(unittest.TestCase):
         finally:
             assert_that(file_exists).is_true()
 
+    def test_export_csv(self):
+        file_exists = False
+        try:
+            self.register.export_csv()
+            file_exists = True
+        except FileNotFoundError:
+            file_exists = False
+        finally:
+            assert_that(file_exists).is_true()
+
     # EXCEPTIONS
 
     def test_add_student_exception(self):
