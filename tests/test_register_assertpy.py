@@ -87,6 +87,9 @@ class TestRegisterAssertpy(unittest.TestCase):
         assert_that(self.register.edit_student).raises(TypeError).when_called_with(
             "dc338aff-d851-4c08-a319-ed4e18640b36", new_first_name=None, new_last_name=None, new_year="2")
 
+    def test_remove_student_exception(self):
+        assert_that(self.register.remove_student).raises(TypeError).when_called_with(123)
+
     def tearDown(self):
         self.register = None
 
