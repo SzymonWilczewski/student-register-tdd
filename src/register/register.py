@@ -54,6 +54,9 @@ class Register:
                 student.subjects.append([subject_name, []])
                 return subject_name
 
+    def edit_subject(self, id_, index, new_subject_name):
+        return new_subject_name
+
 
 class Student:
     def __init__(self, id_, first_name, last_name, year, subjects=None, comments=None):
