@@ -67,6 +67,10 @@ class TestRegisterUnittest(unittest.TestCase):
         actual = self.register.average_from_subject("dc338aff-d851-4c08-a319-ed4e18640b36", 0)
         self.assertEqual(expected, actual)
 
+    def test_average_from_subject_less_or_equal_3(self):
+        actual = self.register.average_from_subject("dc338aff-d851-4c08-a319-ed4e18640b36", 0)
+        self.assertLessEqual(actual, 3)
+
     def test_average_from_all_subjects(self):
         expected = 4.44
         actual = self.register.average_from_all_subjects("dc338aff-d851-4c08-a319-ed4e18640b36")
