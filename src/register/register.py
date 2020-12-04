@@ -123,7 +123,7 @@ class Register:
                 return comment
 
     def edit_comment(self, id_, index, new_comment):
-        if type(index) != int:
+        if type(id_) != str or type(index) != int or type(new_comment) != str:
             raise TypeError
         for student in self.db:
             if student.id_ == id_:
