@@ -99,6 +99,11 @@ class TestRegisterPyHamcrest(unittest.TestCase):
         assert_that(calling(self.register.add_subject).with_args("dc338aff-d851-4c08-a319-ed4e18640b36", True),
                     raises(TypeError))
 
+    def test_edit_subject_exception(self):
+        assert_that(
+            calling(self.register.edit_subject).with_args("dc338aff-d851-4c08-a319-ed4e18640b36", 0, []),
+            raises(TypeError))
+
     def tearDown(self):
         self.register = None
 
