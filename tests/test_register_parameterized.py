@@ -1,4 +1,5 @@
 import unittest
+import ast
 
 from register.register import *
 from parameterized import parameterized, parameterized_class
@@ -87,6 +88,30 @@ class TestRegisterParameterizedClassExceptions(unittest.TestCase):
         with self.assertRaises(TypeError):
             self.register.edit_student("dc338aff-d851-4c08-a319-ed4e18640b36", self.new_first_name, self.new_last_name,
                                        self.new_year)
+
+    def tearDown(self):
+        self.register = None
+
+
+class TestRegisterParameterizedFromFile(unittest.TestCase):
+
+    def setUp(self):
+        self.register = Register()
+
+    def test_edit_student_from_file(self):
+        with io.open(os.path.join(os.path.dirname(__file__), "..\\data\\register_test"), encoding='utf8') as file:
+            for line in file:
+                if line.startswith("#") or line.startswith(" ") or line.startswith("\n"):
+                    continue
+                else:
+                    data = line.split(" ")
+                    new_first_name = ast.literal_eval(data[0])
+                    new_last_name = ast.literal_eval(data[1])
+                    new_year = ast.literal_eval(data[2])
+                    expected = ast.literal_eval(data[3].strip("\n"))
+                    actual = self.register.edit_student("dc338aff-d851-4c08-a319-ed4e18640b36", new_first_name,
+                                                        new_last_name, new_year)
+                    self.assertEqual(expected, actual)
 
     def tearDown(self):
         self.register = None
