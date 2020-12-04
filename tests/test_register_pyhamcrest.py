@@ -84,6 +84,11 @@ class TestRegisterPyHamcrest(unittest.TestCase):
             calling(self.register.add_student).with_args("f53b878e-7105-4f44-9f88-f1cc5d8b63f5", "Anna", "Nowak", "1"),
             raises(TypeError))
 
+    def test_edit_student_exception(self):
+        assert_that(
+            calling(self.register.edit_student).with_args("dc338aff-d851-4c08-a319-ed4e18640b36", new_first_name=None,
+                                                          new_last_name=None, new_year="2"), raises(TypeError))
+
     def tearDown(self):
         self.register = None
 
