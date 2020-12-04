@@ -97,6 +97,11 @@ class TestRegisterUnittest(unittest.TestCase):
                                             "Uczeń przeszkadza w prowadzeniu zajęć")
         self.assertEqual(expected, actual)
 
+    def test_edit_comment_doesnt_contain_q(self):
+        actual = self.register.edit_comment("dc338aff-d851-4c08-a319-ed4e18640b36", 0,
+                                            "Uczeń przeszkadza w prowadzeniu zajęć")
+        self.assertNotRegex(actual, "q")
+
     # EXCEPTIONS
 
     def test_add_student_exception(self):
